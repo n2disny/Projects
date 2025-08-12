@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Survey</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>📊 Interactive Survey</h1>
+            <p>Share your thoughts and help us improve!</p>
+        </header>
+
+        <div id="survey-container" class="survey-container">
+            <div id="welcome-screen" class="welcome-screen">
+                <h2>Welcome to Our Survey!</h2>
+                <p>This survey will take approximately 5-10 minutes to complete. Your responses are anonymous and will help us improve our services.</p>
+                <button id="start-survey" class="btn btn-primary">Start Survey</button>
+            </div>
+
+            <div id="survey-form" class="survey-form hidden">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                
+                <div id="questions-container"></div>
+                
+                <div class="navigation-buttons">
+                    <button id="prev-btn" class="btn btn-secondary hidden">Previous</button>
+                    <button id="next-btn" class="btn btn-primary">Next</button>
+                    <button id="submit-btn" class="btn btn-success hidden">Submit Survey</button>
+                </div>
+            </div>
+
+            <div id="results-screen" class="results-screen hidden">
+                <h2>🎉 Survey Complete!</h2>
+                <p>Thank you for participating in our survey. Here's a summary of your responses:</p>
+                <div id="results-summary"></div>
+                <button id="restart-survey" class="btn btn-primary">Take Survey Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
