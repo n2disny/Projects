@@ -16,36 +16,36 @@ class Survey {
             {
                 id: 2,
                 type: 'multiple-choice',
+                question: 'How did you find out about this event?',
+                options: ['Word-of-Mouth', 'Slack', 'Email', 'Manager', 'Other'],
+                required: true
+            },
+            {
+                id: 3,
+                type: 'multiple-choice',
                 question: 'Was the event time convenient for you?',
                 options: ['Very convenient', 'Somewhat convenient', 'Neutral', 'Somewhat inconvenient', 'Very inconvenient'],
                 required: true
             },
             {
-                id: 3,
+                id: 4,
                 type: 'multiple-choice',
                 question: 'Did you feel well-informed before the event?',
                 options: ['Yes', 'No'],
                 required: true
             },
             {
-                id: 4,
+                id: 5,
                 type: 'multiple-choice',
                 question: 'Would you attend another event like this in the future?',
                 options: ['Yes', 'No'],
                 required: true
             },
             {
-                id: 5,
+                id: 6,
                 type: 'multiple-choice',
                 question: 'Would you recommend this event to others?',
                 options: ['Yes', 'No'],
-                required: true
-            },
-            {
-                id: 6,
-                type: 'multiple-choice',
-                question: 'How did you find out about this event?',
-                options: ['Word-of-Mouth', 'Slack', 'Email', 'Manager', 'Other'],
                 required: true
             },
             {
