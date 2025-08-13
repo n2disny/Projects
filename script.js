@@ -23,19 +23,19 @@ class Survey {
             {
                 id: 3,
                 type: 'multiple-choice',
-                question: 'Was the event time convenient for you?',
-                options: ['Very convenient', 'Somewhat convenient', 'Neutral', 'Somewhat inconvenient', 'Very inconvenient'],
-                required: true
-            },
-            {
-                id: 4,
-                type: 'multiple-choice',
                 question: 'Did you feel well-informed before the event?',
                 options: ['Yes', 'No'],
                 required: true,
                 followUp: {
                     'No': 'Please share why.'
                 }
+            },
+            {
+                id: 4,
+                type: 'multiple-choice',
+                question: 'Was the event time convenient for you?',
+                options: ['Very convenient', 'Somewhat convenient', 'Neutral', 'Somewhat inconvenient', 'Very inconvenient'],
+                required: true
             },
             {
                 id: 5,
