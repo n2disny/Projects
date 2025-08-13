@@ -6,7 +6,7 @@ class Survey {
             {
                 id: 1,
                 type: 'rating',
-                question: 'On a scale of 1 to 10, overall, how did you enjoy the pool party?',
+                question: 'Overall, how did you and your family enjoy the pool party?',
                 min: 1,
                 max: 10,
                 labels: ['Not at all', 'Absolutely loved it!'],
