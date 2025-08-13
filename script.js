@@ -23,39 +23,44 @@ class Survey {
             },
             {
                 id: 3,
-                type: 'checkbox',
-                question: 'Which features do you find most valuable? (Select all that apply)',
-                options: ['User Interface', 'Performance', 'Customer Support', 'Documentation', 'Pricing', 'Integration Options'],
+                type: 'multiple-choice',
+                question: 'Was the event time convenient for you?',
+                options: ['Very convenient', 'Somewhat convenient', 'Neutral', 'Somewhat inconvenient', 'Very inconvenient'],
                 required: true
             },
             {
                 id: 4,
-                type: 'text',
-                question: 'What improvements would you like to see?',
-                placeholder: 'Please share your suggestions...',
-                required: false
+                type: 'multiple-choice',
+                question: 'Did you feel well-informed before the event?',
+                options: ['Yes', 'No'],
+                required: true
             },
             {
                 id: 5,
                 type: 'multiple-choice',
-                question: 'How likely are you to recommend us to others?',
-                options: ['Very Likely', 'Likely', 'Neutral', 'Unlikely', 'Very Unlikely'],
+                question: 'Would you attend another event like this in the future?',
+                options: ['Yes', 'No'],
                 required: true
             },
             {
                 id: 6,
-                type: 'rating',
-                question: 'Rate the quality of our customer service',
-                min: 1,
-                max: 5,
-                labels: ['Poor', 'Excellent'],
+                type: 'multiple-choice',
+                question: 'Would you recommend this event to others?',
+                options: ['Yes', 'No'],
                 required: true
             },
             {
                 id: 7,
+                type: 'multiple-choice',
+                question: 'How did you find out about this event?',
+                options: ['Social Media', 'Friend/Family', 'School Announcement', 'Email', 'Flyer/Poster', 'Other'],
+                required: true
+            },
+            {
+                id: 8,
                 type: 'text',
                 question: 'Any additional comments or feedback?',
-                placeholder: 'Your feedback helps us improve...',
+                placeholder: 'Your feedback helps us plan better events...',
                 required: false
             }
         ];
