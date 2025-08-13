@@ -5,9 +5,11 @@ class Survey {
         this.questions = [
             {
                 id: 1,
-                type: 'multiple-choice',
-                question: 'How did you hear about us?',
-                options: ['Social Media', 'Friend Recommendation', 'Online Advertisement', 'Search Engine', 'Other'],
+                type: 'rating',
+                question: 'On a scale of 1 to 10, overall, how did you enjoy the pool party?',
+                min: 1,
+                max: 10,
+                labels: ['Not at all', 'Absolutely loved it!'],
                 required: true
             },
             {
