@@ -32,21 +32,30 @@ class Survey {
                 type: 'multiple-choice',
                 question: 'Did you feel well-informed before the event?',
                 options: ['Yes', 'No'],
-                required: true
+                required: true,
+                followUp: {
+                    'No': 'Please share why.'
+                }
             },
             {
                 id: 5,
                 type: 'multiple-choice',
                 question: 'Would you attend another event like this in the future?',
                 options: ['Yes', 'No'],
-                required: true
+                required: true,
+                followUp: {
+                    'No': 'Please share why.'
+                }
             },
             {
                 id: 6,
                 type: 'multiple-choice',
                 question: 'Would you recommend this event to others?',
                 options: ['Yes', 'No'],
-                required: true
+                required: true,
+                followUp: {
+                    'No': 'Please share why.'
+                }
             },
             {
                 id: 7,
@@ -133,6 +142,18 @@ class Survey {
                         </label>
                     `;
                 });
+                
+                // Add follow-up question if "No" is selected and follow-up exists
+                if (question.followUp && this.responses[question.id] === 'No') {
+                    html += `
+                        <div class="follow-up-question" style="margin-top: 15px; padding-left: 20px;">
+                            <p style="font-weight: 600; color: #4a5568; margin-bottom: 10px;">${question.followUp['No']}</p>
+                            <input type="text" class="follow-up-input" placeholder="Please explain..." 
+                                   value="${this.responses[`${question.id}_followup`] || ''}" 
+                                   data-question="${question.id}">
+                        </div>
+                    `;
+                }
                 break;
 
             case 'checkbox':
@@ -194,8 +215,21 @@ class Survey {
                     radio.addEventListener('change', (e) => {
                         this.responses[question.id] = e.target.value;
                         this.updateOptionStyles(question.id, e.target.value);
+                        
+                        // Re-render question to show/hide follow-up
+                        if (question.followUp) {
+                            this.renderQuestion();
+                        }
                     });
                 });
+                
+                // Bind follow-up input events
+                const followUpInput = document.querySelector('.follow-up-input');
+                if (followUpInput) {
+                    followUpInput.addEventListener('input', (e) => {
+                        this.responses[`${question.id}_followup`] = e.target.value;
+                    });
+                }
                 break;
 
             case 'checkbox':
@@ -369,4 +403,4 @@ class Survey {
 // Initialize the survey when the page loads
 document.addEventListener('DOMContentLoaded', () => {
     new Survey();
-}); 
+});
