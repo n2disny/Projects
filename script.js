@@ -45,7 +45,7 @@ class Survey {
                 id: 6,
                 type: 'multiple-choice',
                 question: 'How did you find out about this event?',
-                options: ['Social Media', 'Friend/Family', 'School Announcement', 'Email', 'Flyer/Poster', 'Other'],
+                options: ['Word-of-Mouth', 'Slack', 'Email', 'Manager', 'Other'],
                 required: true
             },
             {
