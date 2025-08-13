@@ -64,6 +64,15 @@ class Survey {
     init() {
         this.bindEvents();
         this.showWelcomeScreen();
+        // Ensure proper initial state
+        this.forceHideAllScreens();
+        this.showWelcomeScreen();
+    }
+
+    forceHideAllScreens() {
+        document.getElementById('welcome-screen').classList.add('hidden');
+        document.getElementById('survey-form').classList.add('hidden');
+        document.getElementById('results-screen').classList.add('hidden');
     }
 
     bindEvents() {
@@ -89,13 +98,12 @@ class Survey {
     }
 
     showWelcomeScreen() {
+        this.forceHideAllScreens();
         document.getElementById('welcome-screen').classList.remove('hidden');
-        document.getElementById('survey-form').classList.add('hidden');
-        document.getElementById('results-screen').classList.add('hidden');
     }
 
     startSurvey() {
-        document.getElementById('welcome-screen').classList.add('hidden');
+        this.forceHideAllScreens();
         document.getElementById('survey-form').classList.remove('hidden');
         this.currentQuestion = 0;
         this.renderQuestion();
@@ -321,7 +329,7 @@ class Survey {
     }
 
     showResults() {
-        document.getElementById('survey-form').classList.add('hidden');
+        this.forceHideAllScreens();
         document.getElementById('results-screen').classList.remove('hidden');
         
         const resultsSummary = document.getElementById('results-summary');

@@ -232,7 +232,18 @@ body {
     color: white;
 }
 
+/* Enhanced hiding rules to ensure proper visibility states */
 .hidden {
+    display: none !important;
+}
+
+/* Ensure only one screen is visible at a time */
+#welcome-screen:not(.hidden) ~ #survey-form,
+#welcome-screen:not(.hidden) ~ #results-screen,
+#survey-form:not(.hidden) ~ #welcome-screen,
+#survey-form:not(.hidden) ~ #results-screen,
+#results-screen:not(.hidden) ~ #welcome-screen,
+#results-screen:not(.hidden) ~ #survey-form {
     display: none !important;
 }
 
