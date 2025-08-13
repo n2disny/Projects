@@ -9,7 +9,7 @@ class Survey {
                 question: 'Overall, how did you and your family enjoy the pool party?',
                 min: 1,
                 max: 10,
-                labels: ['Not at all', 'Absolutely loved it!'],
+                labels: ['😢', '😊'],
                 required: true
             },
 
