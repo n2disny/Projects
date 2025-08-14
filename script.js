@@ -171,31 +171,24 @@ class Survey {
                 break;
 
             case 'rating':
-                const currentValue = this.responses[question.id] || question.min;
+                const currentValue = this.responses[question.id] || '';
                 html += `
-                    <div class="option">
-                        <div class="slider-container">
-                            <input type="range" min="${question.min}" max="${question.max}" 
-                                   value="${currentValue}" class="rating-slider" 
-                                   data-question="${question.id}">
-                        </div>
-                        
-                        <div class="emoji-scale">
-                            <span class="emoji-item">😢</span>
-                            <span class="emoji-item">2</span>
-                            <span class="emoji-item">3</span>
-                            <span class="emoji-item">4</span>
-                            <span class="emoji-item">5</span>
-                            <span class="emoji-item">6</span>
-                            <span class="emoji-item">7</span>
-                            <span class="emoji-item">8</span>
-                            <span class="emoji-item">9</span>
-                            <span class="emoji-item">😊</span>
-                        </div>
-                        
-                        <div style="text-align: center; margin-top: 10px; font-weight: 600; color: #667eea;">
-                            ${currentValue}
-                        </div>
+                    <div class="emoji-options">
+                        <label class="emoji-option ${currentValue === '😢' ? 'selected' : ''}">
+                            <input type="radio" name="q${question.id}" value="😢" ${currentValue === '😢' ? 'checked' : ''}>
+                            <span class="emoji-display">😢</span>
+                            <span class="emoji-text">Sad</span>
+                        </label>
+                        <label class="emoji-option ${currentValue === '😐' ? 'selected' : ''}">
+                            <input type="radio" name="q${question.id}" value="😐" ${currentValue === '😐' ? 'checked' : ''}>
+                            <span class="emoji-display">😐</span>
+                            <span class="emoji-text">Neutral</span>
+                        </label>
+                        <label class="emoji-option ${currentValue === '😊' ? 'selected' : ''}">
+                            <input type="radio" name="q${question.id}" value="😊" ${currentValue === '😊' ? 'checked' : ''}>
+                            <span class="emoji-display">😊</span>
+                            <span class="emoji-text">Happy</span>
+                        </label>
                     </div>
                 `;
                 break;
@@ -265,14 +258,13 @@ class Survey {
                 break;
 
             case 'rating':
-                const slider = document.querySelector('.rating-slider');
-                if (slider) {
-                    slider.addEventListener('input', (e) => {
-                        const value = e.target.value;
-                        this.responses[question.id] = parseInt(value);
-                        e.target.nextElementSibling.nextElementSibling.textContent = value;
+                const emojiOptions = document.querySelectorAll(`input[name="q${question.id}"]`);
+                emojiOptions.forEach(option => {
+                    option.addEventListener('change', (e) => {
+                        this.responses[question.id] = e.target.value;
+                        this.updateEmojiOptionStyles(question.id, e.target.value);
                     });
-                }
+                });
                 break;
 
             case 'text':
@@ -303,6 +295,18 @@ class Survey {
         options.forEach(option => {
             const label = option.closest('.option');
             if (option.checked) {
+                label.classList.add('selected');
+            } else {
+                label.classList.remove('selected');
+            }
+        });
+    }
+
+    updateEmojiOptionStyles(questionId, selectedValue) {
+        const options = document.querySelectorAll(`input[name="q${questionId}"]`);
+        options.forEach(option => {
+            const label = option.closest('.emoji-option');
+            if (option.value === selectedValue) {
                 label.classList.add('selected');
             } else {
                 label.classList.remove('selected');
