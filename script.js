@@ -174,10 +174,10 @@ class Survey {
                 const currentValue = this.responses[question.id] || '';
                 html += `
                     <div class="emoji-options">
-                        <label class="emoji-option ${currentValue === '😢' ? 'selected' : ''}">
-                            <input type="radio" name="q${question.id}" value="😢" ${currentValue === '😢' ? 'checked' : ''}>
-                            <span class="emoji-display">😢</span>
-                            <span class="emoji-text">Sad</span>
+                        <label class="emoji-option ${currentValue === '😴' ? 'selected' : ''}">
+                            <input type="radio" name="q${question.id}" value="😴" ${currentValue === '😴' ? 'checked' : ''}>
+                            <span class="emoji-display">😴</span>
+                            <span class="emoji-text">Boring</span>
                         </label>
                         <label class="emoji-option ${currentValue === '😐' ? 'selected' : ''}">
                             <input type="radio" name="q${question.id}" value="😐" ${currentValue === '😐' ? 'checked' : ''}>
