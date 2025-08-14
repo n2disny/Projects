@@ -184,8 +184,14 @@ body {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     color: #718096;
+    padding: 0 20px;
+}
+
+.range-labels span {
+    margin: 0 10px;
+    font-size: 1.5rem;
 }
 
 .navigation-buttons {
