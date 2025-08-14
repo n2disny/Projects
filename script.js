@@ -178,23 +178,21 @@ class Survey {
                             <input type="range" min="${question.min}" max="${question.max}" 
                                    value="${currentValue}" class="rating-slider" 
                                    data-question="${question.id}">
-                            <div class="slider-numbers">
-                                <span>1</span>
-                                <span>2</span>
-                                <span>3</span>
-                                <span>4</span>
-                                <span>5</span>
-                                <span>6</span>
-                                <span>7</span>
-                                <span>8</span>
-                                <span>9</span>
-                                <span>10</span>
-                            </div>
                         </div>
-                        <div class="emoji-labels">
-                            <span class="emoji-label">😢</span>
-                            <span class="emoji-label">😊</span>
+                        
+                        <div class="emoji-scale">
+                            <span class="emoji-item">😢</span>
+                            <span class="emoji-item">2</span>
+                            <span class="emoji-item">3</span>
+                            <span class="emoji-item">4</span>
+                            <span class="emoji-item">5</span>
+                            <span class="emoji-item">6</span>
+                            <span class="emoji-item">7</span>
+                            <span class="emoji-item">8</span>
+                            <span class="emoji-item">9</span>
+                            <span class="emoji-item">😊</span>
                         </div>
+                        
                         <div style="text-align: center; margin-top: 10px; font-weight: 600; color: #667eea;">
                             ${currentValue}
                         </div>

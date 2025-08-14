@@ -205,21 +205,19 @@ body {
     width: 100%;
 }
 
-.emoji-labels {
+.emoji-scale {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 15px;
-    font-size: 1.2rem;
+    margin-top: 20px;
     width: 100%;
 }
 
-.emoji-label:first-child {
-    margin-left: 0;
-}
-
-.emoji-label:last-child {
-    margin-right: 0;
+.emoji-item {
+    font-size: 1.2rem;
+    color: #4a5568;
+    text-align: center;
+    flex: 1;
 }
 
 .range-labels {
