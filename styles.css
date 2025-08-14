@@ -180,18 +180,32 @@ body {
     margin: 10px 0;
 }
 
+.rating-scale {
+    width: 100%;
+    margin: 15px 0;
+}
+
+.rating-scale input[type="range"] {
+    width: 100%;
+    margin: 10px 0;
+}
+
 .range-labels {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-top: 10px;
     font-size: 1.2rem;
     color: #718096;
-    padding: 0 20px;
+    width: 100%;
 }
 
-.range-labels span {
-    margin: 0 10px;
-    font-size: 1.5rem;
+.range-labels .label:first-child {
+    margin-left: 0;
+}
+
+.range-labels .label:last-child {
+    margin-right: 0;
 }
 
 .navigation-buttons {
