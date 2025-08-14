@@ -174,12 +174,26 @@ class Survey {
                 const currentValue = this.responses[question.id] || question.min;
                 html += `
                     <div class="option">
-                        <input type="range" min="${question.min}" max="${question.max}" 
-                               value="${currentValue}" class="rating-slider" 
-                               data-question="${question.id}">
-                        <div class="range-labels">
-                            <span>${question.labels[0]}</span>
-                            <span>${question.labels[1]}</span>
+                        <div class="slider-container">
+                            <input type="range" min="${question.min}" max="${question.max}" 
+                                   value="${currentValue}" class="rating-slider" 
+                                   data-question="${question.id}">
+                            <div class="slider-numbers">
+                                <span>1</span>
+                                <span>2</span>
+                                <span>3</span>
+                                <span>4</span>
+                                <span>5</span>
+                                <span>6</span>
+                                <span>7</span>
+                                <span>8</span>
+                                <span>9</span>
+                                <span>10</span>
+                            </div>
+                        </div>
+                        <div class="emoji-labels">
+                            <span class="emoji-label">😢</span>
+                            <span class="emoji-label">😊</span>
                         </div>
                         <div style="text-align: center; margin-top: 10px; font-weight: 600; color: #667eea;">
                             ${currentValue}
