@@ -148,9 +148,8 @@ class Survey {
                     html += `
                         <div class="follow-up-question" style="margin-top: 15px; padding-left: 20px;">
                             <p style="font-weight: 600; color: #4a5568; margin-bottom: 10px;">${question.followUp['No']}</p>
-                            <input type="text" class="follow-up-input" placeholder="Please explain..." 
-                                   value="${this.responses[`${question.id}_followup`] || ''}" 
-                                   data-question="${question.id}">
+                            <textarea class="follow-up-input" placeholder="Please explain..." 
+                                      data-question="${question.id}">${this.responses[`${question.id}_followup`] || ''}</textarea>
                         </div>
                     `;
                 }
